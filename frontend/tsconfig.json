@@ -26,6 +26,6 @@
   "exclude": ["node_modules"],
   "baseUrl": ".",
   "paths": {
-    "@/*": ["./frontend/*"]  // This should match your actual structure
+    "@/*": ["/frontend/*"]  // This should match your actual structure
   }
 }
