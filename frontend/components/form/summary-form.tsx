@@ -30,9 +30,9 @@ import {
 } from '@/components/ui/select'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { Loader2 } from 'lucide-react'
-import api from '@/lib/api/api'
+import api from '../../lib/api/api'
 import SummaryResult from '@/components/result/summary-result'
-import { summaryFormSchema, type SummaryFormValues } from '@/lib/validations'
+import { summaryFormSchema, type SummaryFormValues } from '../../lib/validations'
 
 export default function SummaryForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)

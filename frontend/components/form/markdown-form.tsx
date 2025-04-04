@@ -24,9 +24,9 @@ import {
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { Loader2, Info } from 'lucide-react'
-import api from '@/lib/api/api'
+import api from '../../lib/api/api'
 import MarkdownResult from '@/components/result/markdown-result'
-import { markdownFormSchema, type MarkdownFormValues } from '@/lib/validations'
+import { markdownFormSchema, type MarkdownFormValues } from '../../lib/validations'
 
 export default function MarkdownForm() {
   const [activeTab, setActiveTab] = useState<'to_markdown' | 'to_text'>(
