@@ -1,10 +1,8 @@
 import os
-import logging
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_cors import CORS
-from logging.handlers import RotatingFileHandler
 
 db = SQLAlchemy()
 migrate = Migrate()
@@ -29,8 +27,6 @@ def create_app(config_name=None):
     db.init_app(app)
     migrate.init_app(app, db)
 
-    # Configure CORS properly
-    # Allow requests from your frontend origin with credentials
     CORS(
         app,
         resources={

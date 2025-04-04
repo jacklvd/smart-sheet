@@ -2,7 +2,6 @@
 Migration script to add expires_at column to existing tables
 """
 
-import os
 import sys
 from datetime import datetime, timedelta
 from pathlib import Path
