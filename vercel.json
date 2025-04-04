@@ -1,5 +1,5 @@
 {
-    "buildCommand": "cd frontend && npm run build",
+    "buildCommand": "yarn build",
     "outputDirectory": "frontend/.next",
     "framework": "nextjs",
     "rewrites": [
