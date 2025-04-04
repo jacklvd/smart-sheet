@@ -6,6 +6,7 @@ from services.summarizer import TextSummarizer
 from services.markdown_converter import MarkdownConverter
 from utils.text_processor import count_words
 import traceback
+from flask_cors import cross_origin
 
 api_bp = Blueprint("api", __name__)
 summarizer = TextSummarizer()
@@ -13,11 +14,12 @@ markdown_converter = MarkdownConverter()
 
 
 @api_bp.route("/summarize", methods=["POST", "OPTIONS"])
+@cross_origin()  # Add cross_origin decorator to ensure CORS headers
 def summarize_text():
     """API endpoint to summarize text with improved error handling and data expiration"""
     # Handle preflight OPTIONS request for CORS
     if request.method == "OPTIONS":
-        return "", 200
+        return "", 200  # Respond with 200 OK for OPTIONS requests
 
     try:
         data = request.get_json()
@@ -131,11 +133,12 @@ def summarize_text():
 
 
 @api_bp.route("/markdown", methods=["POST", "OPTIONS"])
+@cross_origin()  # Add cross_origin decorator
 def convert_markdown():
     """API endpoint to convert text to/from markdown with data expiration"""
     # Handle preflight OPTIONS request for CORS
     if request.method == "OPTIONS":
-        return "", 200
+        return "", 200  # Respond with 200 OK for OPTIONS requests
 
     try:
         data = request.get_json()
@@ -204,6 +207,7 @@ def convert_markdown():
 
 
 @api_bp.route("/health", methods=["GET"])
+@cross_origin()  # Add cross_origin decorator
 def health_check():
     """Health check endpoint with DB stats"""
     try:
