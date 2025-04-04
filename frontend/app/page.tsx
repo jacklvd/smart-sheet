@@ -1,17 +1,19 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import SummaryForm from "@/components/form/summary-form";
-import MarkdownForm from "@/components/form/markdown-form";
+import { useState } from 'react'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import SummaryForm from '@/components/form/summary-form'
+import MarkdownForm from '@/components/form/markdown-form'
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState<string>("summarize");
+  const [activeTab, setActiveTab] = useState<string>('summarize')
 
   return (
     <main className="container mx-auto py-10 px-4">
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold tracking-tight">Smart Content Tool</h1>
+        <h1 className="text-4xl font-bold tracking-tight">
+          Smart Content Tool
+        </h1>
         <p className="text-lg text-muted-foreground mt-2">
           Summarize content and convert between text and markdown formats
         </p>
@@ -35,5 +37,5 @@ export default function Home() {
         </TabsContent>
       </Tabs>
     </main>
-  );
+  )
 }
