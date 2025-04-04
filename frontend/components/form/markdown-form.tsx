@@ -24,7 +24,7 @@ import {
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { Loader2, Info } from 'lucide-react'
-import api from '@/lib/api/api'
+import api from '@/lib/actions/api'
 import MarkdownResult from '@/components/result/markdown-result'
 import { markdownFormSchema, type MarkdownFormValues } from '@/lib/validations'
 
