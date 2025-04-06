@@ -24,7 +24,7 @@ import {
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { Loader2, Info } from 'lucide-react'
-import api from '@/lib/api/api'
+import api from '@/lib/actions/sheet.actions'
 import MarkdownResult from '@/components/result/markdown-result'
 import { markdownFormSchema, type MarkdownFormValues } from '@/lib/validations'
 
@@ -74,7 +74,6 @@ export default function MarkdownForm() {
     }
   }
 
-  // Examples for each mode
   const examples = {
     to_markdown: `This is a paragraph of text.
 
@@ -109,7 +108,6 @@ def example_function():
 Here's an \`<inline>\` HTML tag.`
   }
 
-  // Load example into form
   const loadExample = () => {
     form.setValue('text', examples[activeTab])
   }
