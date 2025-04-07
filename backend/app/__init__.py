@@ -3,6 +3,9 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_cors import CORS
+from dotenv import load_dotenv
+
+load_dotenv()
 
 db = SQLAlchemy()
 migrate = Migrate()
@@ -32,7 +35,7 @@ def create_app(config_name=None):
         resources={
             r"/*": {
                 "origins": [
-                    "http://localhost:3000",  # Add your production frontend URL
+                    os.environ.get("FRONTEND_URL", "http://localhost:3000"),
                 ],
                 "methods": ["GET", "POST", "OPTIONS"],
                 "allow_headers": ["Content-Type", "Authorization"],
